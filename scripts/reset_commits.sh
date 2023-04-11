@@ -1,3 +1,10 @@
+#!/bin/bash
+
+#SBATCH --output=slurm-runs/REP-%x.%j.out
+#SBATCH --error=slurm-runs/REP-%x.%j.err
+#SBATCH --mail-user=ab270@stud.uni-heidelberg.de
+#SBATCH --mail-type=BEGIN,END,FAIL
+
 # ./reset_commits.sh [spec file] [repos dir]
 
 while IFS= read -r line; do
