@@ -17,9 +17,7 @@ while IFS= read -r line; do
 
   if [[ -d "$2/$author/$repo" ]]; then
     echo "$2/$author/$repo" 
-    cd "$2/$author/$repo"
-    git reset --hard $commit
-    cd - > /dev/null
+    (cd "$2/$author/$repo" && git reset --hard $commit)
   else
     echo "Skipping $2/$author/$repo; folder does not exist"
   fi
